@@ -1,0 +1,43 @@
+<div class="container">  
+  <form role="form" [formGroup]="addAppointmentForm">
+    <div class="form-group">
+       <label for="name">name:</label>
+       <input type="text" class="form-control" formControlName='name'>
+     </div>
+     <div class="form-group">
+      <label for="email">email:</label>
+      <input type="text" class="form-control" formControlName='email'>
+    </div>
+    <div class="form-group">
+      <label for="phone">phone:</label>
+      <input type="text" class="form-control" formControlName='phone'>
+    </div>
+    <div class="form-group">
+      <label for="address">address:</label>
+      <input type="text" class="form-control" formControlName='address'>
+    </div>
+    <div class="form-group">
+      <label for="preferedDate">preferedDate:</label>
+      <input type="text" class="form-control" formControlName='preferedDate'>
+    </div>
+    <div class="form-group">
+      <label for="purpose">purpose:</label>
+      <input type="text" class="form-control" formControlName='purpose'>
+    </div>
+    <div class="form-group">
+      <label for="emergency">emergency:</label>
+      <select class="form-control" ng-selected="Yes" formControlName='emergency'>
+          <option value="1" >Yes</option>
+          <option value="0" >No</option>
+      </select>
+    </div>
+    <div class="form-group">
+        <label for="preferedContactMethod">preferedContactMethod:</label>
+        <select class="form-control" ng-selected="Yes" formControlName='emergency'>
+            <option value="1" >Email</option>
+            <option value="0" >Phone</option>
+        </select>
+    </div>
+    <button (click)="onAddRoom()" class="btn btn-default">Add</button>
+  </form>
+</div>

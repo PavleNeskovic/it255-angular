@@ -1,17 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AlertModule } from 'ngx-bootstrap';
+import { RoutingModule } from './routing/routing.module';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
+import { SearchpipePipe } from './pipes/searchpipe.pipe';
+import { DentalServicesComponent } from './pages/dental-services/dental-services.component';
+import { HomeComponent } from './pages/home/home.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { AddRoomComponent } from './pages/add-room/add-room.component';
+import { AddAppointmentComponent } from './pages/add-appointment/add-appointment.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchpipePipe,
+    DentalServicesComponent,
+    HomeComponent,
+    RegisterComponent,
+    AddRoomComponent,
+    AddAppointmentComponent
   ],
   imports: [
-    AlertModule.forRoot(),BrowserModule
+    AlertModule.forRoot(), BrowserModule, RoutingModule, HttpModule, HttpClientModule, FormsModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

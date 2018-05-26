@@ -1,0 +1,8 @@
+<div class="container">
+<input type="text" class="form-control" placeholder="Search" name="name" [(ngModel)]="name">
+<div class="row content">
+  <div class="col-sm-4" *ngFor="let post of posts | searchpipe:name">
+    <h1>{{ post.name }}</h1> 
+    <p>{{ post.description }}</p>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<form role="form" [formGroup]="addRoomForm">
+    <div class="form-group">
+       <label for="roomName">name:</label>
+       <input type="text" class="form-control" formControlName='name'>
+     </div>
+     <div class="form-group">
+      <label for="roomName">email:</label>
+      <input type="text" class="form-control" formControlName='email'>
+    </div>
+    <div class="form-group">
+      <label for="roomName">phone:</label>
+      <input type="text" class="form-control" formControlName='phone'>
+    </div>
+    <div class="form-group">
+      <label for="roomName">address:</label>
+      <input type="text" class="form-control" formControlName='address'>
+    </div>
+    <div class="form-group">
+      <label for="roomName">preferedDate:</label>
+      <input type="text" class="form-control" formControlName='preferedDate'>
+    </div>
+    <div class="form-group">
+      <label for="roomName">purpose:</label>
+      <input type="text" class="form-control" formControlName='purpose'>
+    </div>
+    <div class="form-group">
+      <label for="hasTV">emergency:</label>
+      <select class="form-control" ng-selected="Yes" formControlName='emergency'>
+          <option value="1" >Yes</option>
+          <option value="0" >No</option>
+      </select>
+    </div>
+    <div class="form-group">
+        <label for="hasTV">preferedContactMethod:</label>
+        <select class="form-control" ng-selected="Yes" formControlName='emergency'>
+            <option value="1" >Email</option>
+            <option value="0" >Phone</option>
+        </select>
+      </div>
+
+     <!-- <div class="form-group">
+       <label for="beds">Number of beds:</label>
+       <input type="text" class="form-control"  formControlName='beds'>
+     </div> -->
+     <button (click)="onAddRoom()" class="btn btn-default">Add</button>
+   </form>
+
