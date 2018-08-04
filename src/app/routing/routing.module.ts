@@ -4,6 +4,7 @@ import { HomeComponent } from '../pages/home/home.component';
 import { DentalServicesComponent } from '../pages/dental-services/dental-services.component';
 import { RegisterComponent } from '../pages/register/register.component';
 import { AddAppointmentComponent } from '../pages/add-appointment/add-appointment.component';
+import { LoginComponent } from '../pages/login/login.component';
 
 
 const routes: Routes = [
@@ -12,16 +13,20 @@ const routes: Routes = [
         component: HomeComponent,
     },
     {
-      path: 'services',
-      component: DentalServicesComponent,
+        path: 'services',
+        component: DentalServicesComponent,
     },
     {
-      path: 'register',
-      component: RegisterComponent,
+        path: 'register',
+        component: RegisterComponent,
     },
     {
-      path: 'add-appointment',
-      component: AddAppointmentComponent,
+        path: 'login',
+        component: LoginComponent,
+    },
+    {
+        path: 'add-appointment',
+        component: AddAppointmentComponent,
     }
 ];
 

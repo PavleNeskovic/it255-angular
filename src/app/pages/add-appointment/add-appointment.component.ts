@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { Http, Headers} from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 })
 export class AddAppointmentComponent implements OnInit {
 
-  
-  public addRoomForm = new FormGroup({
+
+  public addAppointmentForm = new FormGroup({
     name: new FormControl(),
     email: new FormControl(),
     phone: new FormControl(),
@@ -27,22 +27,21 @@ export class AddAppointmentComponent implements OnInit {
   ngOnInit() {
   }
 
-  public onAddRoom() {
+  public onAddAppointment() {
     const body = new URLSearchParams();
-
-    body.set('name', this.addRoomForm.value.name);
-    body.set('email', this.addRoomForm.value.email);
-    body.set('phone', this.addRoomForm.value.phone);
-    body.set('address', this.addRoomForm.value.address);
-    body.set('preferedDate', this.addRoomForm.value.preferedDate);
-    body.set('purpose', this.addRoomForm.value.purpose);
-    body.set('emergency', this.addRoomForm.value.emergency);
-    body.set('preferedContactMethod', this.addRoomForm.value.preferedContactMethod);
-
     const headers = new Headers();
+
+    body.set('name', this.addAppointmentForm.value.name);
+    body.set('email', this.addAppointmentForm.value.email);
+    body.set('phone', this.addAppointmentForm.value.phone);
+    body.set('address', this.addAppointmentForm.value.address);
+    body.set('preferedDate', this.addAppointmentForm.value.preferedDate);
+    body.set('purpose', this.addAppointmentForm.value.purpose);
+    body.set('emergency', this.addAppointmentForm.value.emergency);
+    body.set('preferedContactMethod', this.addAppointmentForm.value.preferedContactMethod);
+
     headers.set('Content-Type', 'application/x-www-form-urlencoded');
-    // this._http.post
-   this._http.post('http://localhost/it255/addAppointment.php', body.toString(), {
+    this._http.post('http://localhost/it255/addAppointment.php', body.toString(), {
       headers: headers,
     }).subscribe((result) => {
       this._router.navigateByUrl('/');

@@ -1,21 +1,23 @@
-import { Component, Directive } from '@angular/core';
+import { Component, OnInit, Directive } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Http, Response, Headers } from '@angular/http';
 import 'rxjs/Rx';
 import { Router } from '@angular/router';
+
 @Component({
-  selector: 'RegisterComponent',
-  templateUrl: './register.component.html',
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class RegisterComponent {
+export class LoginComponent implements OnInit {
+
+  ngOnInit() { }
+  loginForm = new FormGroup({
+    username: new FormControl(),
+    password: new FormControl()
+  });
   http: Http;
   router: Router;
-  registerForm = new FormGroup({
-    username: new FormControl(),
-    password: new FormControl(),
-    firstName: new FormControl(),
-    lastName: new FormControl()
-  });
   constructor(http: Http, router: Router) {
     this.http = http;
     this.router = router;
@@ -23,17 +25,16 @@ export class RegisterComponent {
       this.router.navigate(['./']);
     }
   }
-  onRegister(): void {
+  onLogin(): void {
     const body = new URLSearchParams();
     let headers = new Headers();
 
-    body.set('username', this.registerForm.value.username);
-    body.set('password', this.registerForm.value.password);
-    body.set('firstName', this.registerForm.value.firstName);
-    body.set('lastName', this.registerForm.value.lastName);
+    body.set('username', this.loginForm.value.username);
+    body.set('password', this.loginForm.value.password);
 
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    this.http.post('http://localhost/it255/registerservice.php', body.toString(), { headers: headers })
+    headers.append('token', localStorage.getItem('token'));
+    this.http.post('http://localhost/it255/loginservice.php', body.toString(), { headers: headers })
       .map(res => res).subscribe(
         data => {
           let obj = JSON.parse(data["_body"]);

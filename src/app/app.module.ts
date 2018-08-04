@@ -12,8 +12,8 @@ import { SearchpipePipe } from './pipes/searchpipe.pipe';
 import { DentalServicesComponent } from './pages/dental-services/dental-services.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { AddRoomComponent } from './pages/add-room/add-room.component';
 import { AddAppointmentComponent } from './pages/add-appointment/add-appointment.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -23,8 +23,8 @@ import { AddAppointmentComponent } from './pages/add-appointment/add-appointment
     DentalServicesComponent,
     HomeComponent,
     RegisterComponent,
-    AddRoomComponent,
-    AddAppointmentComponent
+    AddAppointmentComponent,
+    LoginComponent
   ],
   imports: [
     AlertModule.forRoot(), BrowserModule, RoutingModule, HttpModule, HttpClientModule, FormsModule, ReactiveFormsModule
