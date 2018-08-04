@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+.background-image {
+    padding-top: 4rem;
+    padding-bottom: calc(10rem - 56px);
+    background-image: url("assets/images/background.jpeg");
+    /* background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 50%; 
+    background-size: 100%; */
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: #2FA4E7;
+}
