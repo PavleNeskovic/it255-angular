@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     this.http = http;
     this.router = router;
     if (localStorage.getItem('token') != null) {
-      this.router.navigate(['./']);
+      this.router.navigate(['./home']);
     }
   }
   onLogin(): void {
@@ -39,7 +39,8 @@ export class LoginComponent implements OnInit {
         data => {
           let obj = JSON.parse(data["_body"]);
           localStorage.setItem('token', obj.token);
-          this.router.navigate(['./']);
+          this.router.navigate(['./home']);
+          location.reload();
         },
         err => {
           let obj = JSON.parse(err._body);

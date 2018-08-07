@@ -37,10 +37,11 @@ export class RegisterComponent {
       .map(res => res).subscribe(
         data => {
           let obj = JSON.parse(data["_body"]);
-          localStorage.setItem('token', obj.token);
-          this.router.navigate(['./']);
+          // localStorage.setItem('token', obj.token);
+          this.router.navigate(['./login']);
         },
         err => {
+          console.log("registration error")
           let obj = JSON.parse(err._body);
           let element = <HTMLElement>document.getElementsByClassName("alert")[0];
           element.style.display = "block";

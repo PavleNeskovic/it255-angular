@@ -44,7 +44,7 @@ export class AddAppointmentComponent implements OnInit {
     this._http.post('http://localhost/it255/addAppointment.php', body.toString(), {
       headers: headers,
     }).subscribe((result) => {
-      this._router.navigateByUrl('/');
+      this._router.navigateByUrl('/home');
     }, (error) => {
       console.log(error);
     });

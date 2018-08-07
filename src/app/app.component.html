@@ -11,14 +11,17 @@
       <li class="nav-item" routerLink="/services">
         <a class="nav-link" >Services</a>
       </li>
-      <li class="nav-item" routerLink="/add-appointment">
+      <li class="nav-item" *ngIf="isAuth" routerLink="/add-appointment">
         <a class="nav-link" >Schedule an appointment</a>
       </li>
-      <li class="nav-item" routerLink="/register">
+      <li class="nav-item" *ngIf="!isAuth" routerLink="/register">
         <a class="nav-link" >Register</a>
       </li>
-      <li class="nav-item" routerLink="/login">
+      <li class="nav-item" *ngIf="!isAuth" routerLink="/login">
         <a class="nav-link" >Login</a>
+      </li>
+      <li class="nav-item" *ngIf="isAuth">
+        <a class="nav-link" (click)="logOut()">Logout</a>
       </li>
     </ul>
   </div>
